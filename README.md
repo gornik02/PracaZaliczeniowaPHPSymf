@@ -1,6 +1,7 @@
 # Autorzy: 
   - Gabriel Radzięta
   - Marcin Brzóska
+  - Krzysztof Lewiarz
 
 # Krótki opis
 Strona firmowa przedsiębiorstwa nie sprecyzowanej branży, której zadaniem będzie informowanie klientów o pojawieniu się nowych produktów lub usług. Użytkownicy będą również informowani o ważnych zmianach w funkcjonowaniu firmy np. o zmianach w danych kontaktowych lub zmianach godzin otwarcia firmy. Do bazy klientów będzie można dopisać się na stronie podając email(newsletter).
