@@ -27,3 +27,38 @@ Implementacja aplikacji zostanie podzielona na 3 grupy.
   - 3.4 Kontakt + (Formularz do wysyłania pytań)
   - 3.5 Panel Administratora
   
+## 4. Rozbicie planu na poszczególne warstwy
+  - 4.1 Model
+    - Model danych logowania
+    - Model danch newslettera
+    - Model danych produktu
+  - 4.2 Kontroler
+    - Login Kontroler: obsługa logowania Admina
+    - Product Kontroler(dodawanie, usuwanie, aktualizowanie produktów)
+    - Newsletter Kontroler: obsługa zapisów do newslettera
+    - Activity Kontroler: kontroler do obsługi śledzenia zmian w produktach
+  - 4.3 Widok
+    - Login View: formularz logowania
+    - Newsletter View: formularz zapisu do newslettera
+    - Main View: widok głowna aplikacji
+    - Offer View: widok z ofertą firmy
+    - About View: widok informacyjna o firmie
+    - Contact View: widok z kontaktem do firmy
+    - Admin View: vidok Administratora 
+## 5. Plan Bazy Danych
+  - 5.1 Tabela LoginData
+    - id
+    - login
+    - password(zahaszowane haslo)
+    - Mail
+  - 5.2 Tabela NewsletterData
+    - id
+    - mail
+    - addData
+  - 5.3 Tabela ProductData
+    - id
+    - name
+    - count
+    - price
+    - description
+    
