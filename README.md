@@ -54,7 +54,7 @@ Implementacja aplikacji zostanie podzielona na 3 grupy.
   - 5.2 Tabela NewsletterData
     - id
     - mail
-    - addData
+    - addDate
   - 5.3 Tabela ProductData
     - id
     - name
