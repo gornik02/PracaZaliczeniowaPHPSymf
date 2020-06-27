@@ -1,0 +1,65 @@
+easy_admin:
+    design:
+        menu:
+            - {label: "Entities"}
+            - label: "Products"
+              children:
+                - { entity: Product, label: "List All Products", icon: "th-list" }
+                - { entity: Product, label: "Add product", icon: "plus", params: {action: "new"} }
+            - label: "Newsletter"
+              children:
+                - {entity: NewsletterUsers, label: "Newsletter Users", icon: "user"}
+                - { entity: Newsletter, label: "List All Messages", icon: "th-list" }
+                - { entity: Newsletter, label: "Add Message", icon: "plus", params: {action: "new"} }
+    site_name: 'Administration Panel'
+    user:
+        display_name: true
+        display_avatar: true
+        name_property_path: 'email'
+    entities:
+       # List the entity class name you want to manage
+       Product:
+        class: App\Entity\Product
+        label: "Product"
+        form:
+            fields:
+                - {type: 'group', icon: "pencil", label: "Basic Information", css_class: 'col-lg-7'}
+                - name
+                - {property: 'content', type: 'text-editor'}
+                - price
+                - {type: 'group', icon: "th-list", label: "Availability", css_class: 'col-lg-5'}
+                - count
+                - published
+        list:
+            collapse_actions: true
+            actions: ['show', 'edit', 'delete']
+            batch_actions: ['delete']
+            title: "Product List"
+            filters: ['name', 'published']
+        show:
+            fields:
+                - name
+                - {property: 'content', type: 'raw'}
+                - price
+                - count
+                - published
+       Newsletter:
+        class: App\Entity\Newsletter
+        label: "Newsletter"
+        form:
+            fields:
+                - {type: 'group', icon: "pencil", label: "Information", css_class: 'col-lg-7'}
+                - createdAt
+                - {property: 'content', type: 'text-editor'}
+        list:
+            actions: ['show', '-edit', '-delete']
+        show:
+            fields:
+                - createdAt
+                - {property: 'content', type: 'raw'}
+       NewsletterUsers:
+        class: App\Entity\NewsletterUsers
+        label: "Newsletter Users"
+        list:
+            actions: ['-edit', 'delete']
+    
