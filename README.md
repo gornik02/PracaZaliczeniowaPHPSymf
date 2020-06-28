@@ -33,32 +33,63 @@ Implementacja aplikacji zostanie podzielona na 3 grupy.
     - Model danch newslettera
     - Model danych produktu
   - 4.2 Kontroler
-    - Login Kontroler: obsługa logowania Admina
-    - Product Kontroler(dodawanie, usuwanie, aktualizowanie produktów)
-    - Newsletter Kontroler: obsługa zapisów do newslettera
-    - Activity Kontroler: kontroler do obsługi śledzenia zmian w produktach
+    - LoginController: obsługa logowania Admina ( Easy Admin )
+    - ProductController: (dodawanie, usuwanie, aktualizowanie produktów)
+    - NewsletterUsersController: obsługa zapisów do newslettera
+    - MailerController: obsługa wysyłania maili do użytkowników
+    - SecurityController: Kontroler bezpieczeństwa logowania
   - 4.3 Widok
     - Login View: formularz logowania
-    - Newsletter View: formularz zapisu do newslettera
-    - Main View: widok głowna aplikacji
-    - Offer View: widok z ofertą firmy
+    - Home View: widok głowna aplikacji + Zapis do newslettera
+    - Product View: widok z ofertą firmy
     - About View: widok informacyjna o firmie
     - Contact View: widok z kontaktem do firmy
-    - Admin View: vidok Administratora 
+    - Admin View: widok Administratora 
 ## 5. Plan Bazy Danych
-  - 5.1 Tabela LoginData
+  - 5.1 Tabela User
     - id
-    - login
+    - email
+    - roles
     - password(zahaszowane haslo)
-    - Mail
-  - 5.2 Tabela NewsletterData
+  - 5.2 Tabela Newsletter
     - id
-    - mail
-    - addDate
-  - 5.3 Tabela ProductData
+    - content
+    - created_at
+  - 5.3 Tabela NewsletterUsers
+    - id
+    - email
+  - 5.4 Tabela Product
     - id
     - name
-    - count
+    - content
+    - published
     - price
-    - description
+    - count
+    
+## Jak zacząć
+
+``` bash
+# Zainstaluj dependencje
+composer install
+
+# Edytuj plik .env i dodaj parametry do Bazy danych
+
+# Stwórz schema bazy danych
+php bin/console doctrine:migrations:diff
+# Uruchom migracje
+php bin/console doctrine:migrations:migrate
+
+# Dodaj Admin usera do bazy danych
+The password should be generated with
+php bin/console security:encode-password
+
+# Uruchom server symfony
+symfony server:start
+
+#Znajdziesz panel administratora pod url: /admin
+
+```
+
+
+
     
