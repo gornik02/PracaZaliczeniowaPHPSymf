@@ -7,12 +7,13 @@
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class HomeController extends AbstractController{
+    class AboutController extends AbstractController{
 
         /**
-         * @Route("/")
+         * @Route("/about")
          */
         public function index() {
-            return $this->render('home/index.html.twig');
+            return $this->render('about/index.html.twig');
         }
+
     }
