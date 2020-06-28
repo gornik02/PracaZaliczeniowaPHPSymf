@@ -49,10 +49,10 @@ easy_admin:
         form:
             fields:
                 - {type: 'group', icon: "pencil", label: "Information", css_class: 'col-lg-7'}
-                - createdAt
+                - {property: 'createdAt', type_options: { disabled: true } }
                 - {property: 'content', type: 'text-editor'}
         list:
-            actions: ['show', '-edit', '-delete']
+            actions: ['show', { name: 'newsletter_send', label: "Send", type: 'route' } ,'-edit', '-delete']
         show:
             fields:
                 - createdAt

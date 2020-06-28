@@ -38,7 +38,7 @@ class Newsletter
 
     public function getContent(): ?string
     {
-        return $this->content;
+        return strip_tags($this->content);
     }
 
     public function setContent(string $content): self
