@@ -15,18 +15,17 @@ class NewsletterFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', TextType::class,[
-                'attr'=>[
+            ->add('email', TextType::class, [
+                'attr' => [
                     'placeholder'=> 'email',
                     'class' => 'form-control'
                 ]
             ])
-        ->add('add', SubmitType::class,[
-            'attr'=>[
-                'class' => 'btn btn-success'
-            ]
-        ])
-    ;
+            ->add('add', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-success'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

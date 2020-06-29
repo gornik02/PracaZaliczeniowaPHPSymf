@@ -7,27 +7,46 @@
     <div class="jumbotron">
         <h2 class="h1-responsive font-weight-bold text-center my-4">Join us</h2>
         <hr class="my-6">
-            <div class="row">
                 <div class="col-md-9 mb-md-0 mb-5">
                     {{form_start(form)}}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                                {{ form_row(form.email) }}
-                            </div>
+                    <div class="row" style="margin-left: 40%; margin-bottom: 10%;">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                        <div class="carousel-item active" style="width:400px;height:200px;">
+                            <img class="d-block w-100" src="https://wallpaperaccess.com/full/31189.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item" style="width:400px;height:200px;">
+                            <img class="d-block w-100" src="https://i.pinimg.com/originals/91/b5/cd/91b5cdab51e207263169904b227503b4.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item" style="width:400px;height:200px;">
+                            <img class="d-block w-100" src="https://wallpaperplay.com/walls/full/8/9/c/139650.jpg" alt="Third slide">
+                        </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                        </a>
+                        </div>
                         </div>
                     </div>
-                    <p></p>
-                    <div class="text-center text-md-left text-white">
-                        {{ form_row(form.add) }}
-                        {{ form_end(form) }}
+                    <div class="row" style="margin-left: 28%;">
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+                                    {{ form_row(form.email) }}
+                                </div>
+                            </div>
+                        <p></p>
+                        <div class="text-center text-md-left text-white" style="margin-top: 4.5%;">
+                            {{ form_row(form.add) }}
+                            {{ form_end(form) }}
+                        </div>
                     </div>
                 </div>
-            </div>
         </hr>
     </div>
 </section>
-    {{form_start(form)}}
-    {{form(form)}}
-    {{form_end(form)}}
 {% endblock %}

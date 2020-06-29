@@ -16,13 +16,13 @@
     class HomeController extends AbstractController{
 
         /**
-         * @Route("/", name="form")
+         * @Route("/", name="Hone_page")
          */
-        public function Add(Request $request)
+        public function AddUserToNewsletter(Request $request)
         {
             $email = new NewsletterUsers();
-            $form = $this->createForm(NewsletterFormType::class, $email,[
-                'action' => $this->generateUrl('form')
+            $form = $this->createForm(NewsletterFormType::class, $email, [
+                'action' => $this->generateUrl('Hone_page')
             ]);
             $form->handleRequest($request);
 
