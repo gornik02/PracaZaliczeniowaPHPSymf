@@ -4,30 +4,30 @@
 
 {% block body %}
     {% if products %}
-        <br />
-        <h1 class="display-5 text-center">Available products</h1>
-        <br />
-        <table id="products" class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Information</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for product in products %}
-                {% if product.published and product.count > 0 %}
+        <div class="container">
+            <h1 class="display-5 text-center mt-3 mb-5">Available products</h1>
+            <table id="products" class="table table-striped">
+                <thead>
                     <tr>
-                        <td>{{ product.name }}</td>
-                        <td>{{ product.content | raw }}</td>
-                        <td class="text-success">{{ product.price }}</td>
+                        <th>Product</th>
+                        <th>Information</th>
+                        <th>Price</th>
                     </tr>
-                {% endif %}
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    {% if product.published and product.count > 0 %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.content | raw }}</td>
+                            <td class="text-success">{{ product.price }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     {% else %}
-        <p>No products to display</p>
+        <p class="container">No products to display</p>
     {% endif %}
 {% endblock %}
