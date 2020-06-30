@@ -1,25 +1,28 @@
 <?php
-    namespace App\Controller;
 
-    use App\Entity\Product;
+// Gabriel Radzięta
 
-    use Symfony\Component\HttpFoundation\Response;
-    use Symfony\Component\Routing\Annotation\Route;
+namespace App\Controller;
 
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Product;
 
-    class ProductController extends AbstractController{
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-        /**
-         * @Route("/products")
-         */
-        public function index() {
-            $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-            return $this->render('products/index.html.twig', array(
-                'products' => $products
-            ));
-        }
-        
+class ProductController extends AbstractController{
+
+    /**
+     * @Route("/products")
+     */
+    public function index() {
+        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+
+        return $this->render('products/index.html.twig', array(
+            'products' => $products
+        ));
     }
+    
+}

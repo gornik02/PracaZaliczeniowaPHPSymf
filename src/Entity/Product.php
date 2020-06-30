@@ -1,5 +1,7 @@
 <?php
 
+// Gabriel Radzięta 
+
 namespace App\Entity;
 
 use App\Repository\ProductRepository;

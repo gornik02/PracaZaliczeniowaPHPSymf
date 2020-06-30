@@ -1,49 +1,52 @@
 <?php
-    namespace App\Controller;
 
-    use App\Entity\NewsletterUsers;
-    use App\Entity\Newsletter;
+// Gabriel Radzięta
 
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+namespace App\Controller;
 
-    use Symfony\Component\Mailer\MailerInterface;
-    use Symfony\Component\Mime\Email;
+use App\Entity\NewsletterUsers;
+use App\Entity\Newsletter;
 
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\Routing\Annotation\Route;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class MailerController extends AbstractController
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+
+class MailerController extends AbstractController
+{
+    /**
+     * @Route("/admin/newsletter/send", name="newsletter_send")
+     */
+    public function sendEmail(MailerInterface $mailer, Request $request)
     {
-        /**
-         * @Route("/admin/newsletter/send", name="newsletter_send")
-         */
-        public function sendEmail(MailerInterface $mailer, Request $request)
-        {
-            $repository = $this->getDoctrine()->getRepository(Newsletter::class);
+        $repository = $this->getDoctrine()->getRepository(Newsletter::class);
 
-            $id = $request->query->get('id');
-            $entity = $repository->find($id);
-            $content = $entity->getContent();
-            
-            $users = $this->getDoctrine()->getRepository(NewsletterUsers::class)->findAll();
+        $id = $request->query->get('id');
+        $entity = $repository->find($id);
+        $content = $entity->getContent();
+        
+        $users = $this->getDoctrine()->getRepository(NewsletterUsers::class)->findAll();
 
-            foreach ($users as $value) {
-                $emailValue = $value->getEmail();
+        foreach ($users as $value) {
+            $emailValue = $value->getEmail();
 
-                $email = (new Email())
-                ->from('symfonytest11@gmail.com')
-                ->to($emailValue)
-                ->subject('Newsletter update')
-                ->html($content);
+            $email = (new Email())
+            ->from('symfonytest11@gmail.com')
+            ->to($emailValue)
+            ->subject('Newsletter update')
+            ->html($content);
 
-                $mailer->send($email);
-            } 
-            
+            $mailer->send($email);
+        } 
+        
 
-            return $this->redirectToRoute('easyadmin', [
-                'action' => 'list',
-                'entity' => $request->query->get('entity'),
-            ]);
-        }
+        return $this->redirectToRoute('easyadmin', [
+            'action' => 'list',
+            'entity' => $request->query->get('entity'),
+        ]);
     }
+}

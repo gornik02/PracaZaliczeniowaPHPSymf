@@ -1,3 +1,5 @@
+# Gabriel Radzięta
+
 easy_admin:
     design:
         menu:
@@ -17,7 +19,6 @@ easy_admin:
         display_avatar: true
         name_property_path: 'email'
     entities:
-       # List the entity class name you want to manage
        Product:
         class: App\Entity\Product
         label: "Product"
