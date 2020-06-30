@@ -1,3 +1,30 @@
+
+    
+## Jak zacząć
+
+``` bash
+# Zainstaluj dependencje
+composer install
+
+# Edytuj plik .env i dodaj parametry do Bazy danych
+
+# Stwórz schema bazy danych
+php bin/console doctrine:migrations:diff
+# Uruchom migracje
+php bin/console doctrine:migrations:migrate
+
+# Dodaj Admin usera do bazy danych
+Rola: ["ROLE_USER"] (Nie bierzemy jej pod uwagi, bo mamy tylko jednego usera - Admina)
+Hasło powinno zostać wygenerowane komendą:
+php bin/console security:encode-password
+
+# Uruchom server symfony
+symfony server:start
+
+#Znajdziesz panel administratora pod url: /admin
+
+```
+
 # Autorzy: 
   - Gabriel Radzięta
   - Marcin Brzóska
@@ -64,32 +91,4 @@ Implementacja aplikacji zostanie podzielona na 3 grupy.
     - content
     - published
     - price
-    - count
-    
-## Jak zacząć
-
-``` bash
-# Zainstaluj dependencje
-composer install
-
-# Edytuj plik .env i dodaj parametry do Bazy danych
-
-# Stwórz schema bazy danych
-php bin/console doctrine:migrations:diff
-# Uruchom migracje
-php bin/console doctrine:migrations:migrate
-
-# Dodaj Admin usera do bazy danych
-The password should be generated with
-php bin/console security:encode-password
-
-# Uruchom server symfony
-symfony server:start
-
-#Znajdziesz panel administratora pod url: /admin
-
-```
-
-
-
-    
+    - count    
