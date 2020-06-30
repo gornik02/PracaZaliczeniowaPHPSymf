@@ -1,0 +1,37 @@
+[
+{"type":"header","version":"4.9.2","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"praca_zaliczeniowa"},
+{"type":"table","name":"doctrine_migration_versions","database":"praca_zaliczeniowa","data":
+[
+{"version":"DoctrineMigrations\\Version20200627154329","executed_at":"2020-06-27 17:43:52","execution_time":"309"},
+{"version":"DoctrineMigrations\\Version20200627174710","executed_at":"2020-06-27 19:47:19","execution_time":"1053"},
+{"version":"DoctrineMigrations\\Version20200627180553","executed_at":"2020-06-27 20:05:56","execution_time":"146"},
+{"version":"DoctrineMigrations\\Version20200627183125","executed_at":"2020-06-27 20:31:30","execution_time":"346"}
+]
+}
+,{"type":"table","name":"newsletter","database":"praca_zaliczeniowa","data":
+[
+{"id":"2","content":"<div>Hello<\/div>","created_at":"2020-06-27 20:14:00"},
+{"id":"4","content":"<div>Newsletter Test<\/div>","created_at":"2020-06-30 17:37:18"}
+]
+}
+,{"type":"table","name":"newsletter_users","database":"praca_zaliczeniowa","data":
+[
+{"id":"4","email":"radzieta.gabriel@gmail.com"},
+{"id":"6","email":"krzycho5434@gmail.com"},
+{"id":"10","email":"test@test.com"}
+]
+}
+,{"type":"table","name":"product","database":"praca_zaliczeniowa","data":
+[
+{"id":"2","name":"First Product","content":"<div>This is were you can find information about your first product.<\/div>","published":"1","price":"24","count":"5"},
+{"id":"3","name":"Second Product","content":"<div>This is were you can find information about your second product.&nbsp;<\/div>","published":"1","price":"778","count":"1"},
+{"id":"4","name":"Third Product","content":"<div>This is information about the third product<\/div>","published":"1","price":"45","count":"11"}
+]
+}
+,{"type":"table","name":"user","database":"praca_zaliczeniowa","data":
+[
+{"id":"1","email":"admin@admin.com","roles":"[\"ROLE_USER\"]","password":"$argon2i$v=19$m=65536,t=4,p=1$ZVVrdm5rVkFJMk9vRDUwRA$MDSaycEqSgBAh0tV94pcy5glLBMbz52x9o4zbIsnvUM"}
+]
+}
+]
